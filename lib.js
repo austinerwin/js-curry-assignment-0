@@ -29,7 +29,9 @@ const cart =
 const itemRepeater =
   itemName =>
     count => {
-      // TODO
+      let arr = new Array(count)
+      arr.fill(itemName)
+      return arr
     }
 
 /**
@@ -39,7 +41,9 @@ const itemRepeater =
 const constructCarts =
   listings =>
     customers => {
-      // TODO
+      customers.map((cart) => {
+
+      })
     }
 
 module.exports = {
