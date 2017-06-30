@@ -34,6 +34,14 @@ const itemRepeater =
       return arr
     }
 
+const fillCart =
+  itemsObj => {
+    let arr = []
+    for (let itemName in itemsObj) {
+      arr = arr.concat(itemRepeater(itemName)(itemsObj[itemName]))
+    }
+    return arr
+  }
 /**
  * should return an array of carts with each given customer's shopping list
  * as an array of items
@@ -41,8 +49,8 @@ const itemRepeater =
 const constructCarts =
   listings =>
     customers => {
-      customers.map((cart) => {
-
+      return customers.map((customer) => {
+        return { customer: customer.name, items: fillCart(customer.shoppingList) }
       })
     }
 
